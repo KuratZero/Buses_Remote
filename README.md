@@ -3,8 +3,8 @@
 Easy learning project of bus station operation using JDBC over PostgreSQL.
 
 Requirements:
-PostgreSQL
-PostgreSQL Driver
+PostgreSQL,
+PostgreSQL Driver,
 The tables "buses_park" and "buses_route" (can be changed)
 have three columns in each of them: id(int), driver(test), plate(test). (you can also change it).
 
@@ -19,8 +19,8 @@ any changes in the code and vice versa.
 Простой в освоении проект работы автобусной станции с использованием JDBC поверх PostgreSQL.
 
 Требования:
-PostgreSQL
-Драйвер PostgreSQL
+PostgreSQL,
+Драйвер PostgreSQL,
 Таблицы "buses_park" и "buses_route" (могут быть изменены)
 содержат по три столбца в каждой из них: id(int), driver(test), plate(test). (вы также можете изменить его).
 
