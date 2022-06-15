@@ -1,6 +1,5 @@
 package Menu;
 
-import Buses.Base;
 import Buses.Bus;
 
 import java.sql.SQLException;

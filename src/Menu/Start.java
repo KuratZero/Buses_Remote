@@ -5,9 +5,9 @@ import java.sql.*;
 
 
 public class Start {
-    static final String DB_URL = "jdbc:postgresql://127.0.0.1:5432/name_of_database";
-    static final String USER = "login";
-    static final String PASS = "password";
+    static private final String DB_URL = "jdbc:postgresql://localhost:5432/name_database";
+    static private final String USER = "login";
+    static private final String PASS = "password";
 
     public static void main(String[] argv) {
         Connection connection;

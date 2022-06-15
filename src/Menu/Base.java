@@ -1,5 +1,7 @@
-package Buses;
+package Menu;
 
+
+import Buses.Bus;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -7,13 +9,13 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 public class Base {
-    Statement stat;
-    String name;
-    public Base(Statement statement, String name) {
+    private final Statement stat;
+    private final String name;
+    protected Base(Statement statement, String name) {
         stat = statement;
         this.name = name;
     }
-    public ArrayList<Bus> getAll() throws SQLException {
+    protected ArrayList<Bus> getAll() throws SQLException {
         ResultSet res = stat.executeQuery("Select * from " + name + ";");
         ArrayList<Bus> buses = new ArrayList<>();
         while(res.next()) {
@@ -22,12 +24,12 @@ public class Base {
         return buses;
     }
 
-    public void insert(Bus bus) throws SQLException {
+    protected void insert(Bus bus) throws SQLException {
         stat.execute("INSERT INTO " + name + " (id, driver, plate) VALUES ('"
                 + bus.id() + "', '" + bus.name() + "', '" + bus.plate() + "');");
     }
 
-    public Bus get(int id) throws SQLException {
+    protected Bus get(int id) throws SQLException {
         ResultSet rset = stat.executeQuery("SELECT * FROM " + name + " WHERE id = " + id + ";");
         if(rset.next()) {
             return new Bus(rset.getInt(1), rset.getString(2), rset.getString(3));
@@ -36,7 +38,7 @@ public class Base {
         }
     }
 
-    public Bus delete(int id) throws SQLException {
+    protected Bus delete(int id) throws SQLException {
         Bus get = this.get(id);
         if(get == null) return null;
         stat.execute("DELETE FROM " + name + " WHERE id = " + id + ";");
